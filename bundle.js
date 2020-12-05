@@ -22,6 +22,76 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+//===============================================const 
+var user42 = {
+  nome: 'Faran'
+};
+user42.nome = 'Ruziel';
+console.log(user42); //===============================================HandleArray
+
+var arr = [1, 2, 3, 4, 5];
+var newArr = arr.map(function (item, index) {
+  return item + index;
+});
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+var filter = arr.filter(function (item) {
+  return item % 2 === 0;
+});
+var find = arr.find(function (item) {
+  return item === 4;
+});
+console.log("Array original: " + arr);
+console.log("Array Map: " + newArr);
+console.log("Array Reduce: " + sum);
+console.log("Array Filter: " + filter);
+console.log("Array Find: " + find); //===============================================Arrow Function
+
+var newArr2 = arr.map(function (item) {
+  return item * 2;
+});
+console.log("Arrow Function " + newArr2);
+
+var arrowFun = function arrowFun() {
+  return {
+    name: 'Nikin'
+  };
+};
+
+console.log(arrowFun()); //===============================================Valores Padrão
+
+var soma = function soma() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
+};
+
+console.log(soma(1));
+console.log(soma()); //===============================================Desestruturação
+
+var user53 = {
+  nome: "Faran",
+  idade: 32,
+  endereco: {
+    cidade: "Portalegre",
+    estado: "RN"
+  }
+}; // const nome = usuario.nome;
+// const idade = usuario.idade;
+// const cidade = usuario.endereco.cidade;
+
+var nome = user53.nome,
+    idade = user53.idade,
+    cidade = user53.endereco.cidade;
+
+function mostraEstado(_ref) {
+  var estado = _ref.endereco.estado;
+  console.log(estado);
+}
+
+mostraEstado(user53); //===============================================
+
 var List = /*#__PURE__*/function () {
   function List() {
     _classCallCheck(this, List);
@@ -60,6 +130,11 @@ var TodoList = /*#__PURE__*/function (_List) {
     value: function mostraUsuario() {
       console.log(this.usuario);
     }
+  }], [{
+    key: "soma",
+    value: function soma(a, b) {
+      return a + b;
+    }
   }]);
 
   return TodoList;
@@ -72,3 +147,5 @@ document.getElementById('novotodo').onclick = function () {
 };
 
 MinhaLista.mostraUsuario();
+var resultado = TodoList.soma(21, 21);
+console.log(resultado);
