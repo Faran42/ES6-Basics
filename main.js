@@ -69,6 +69,48 @@ function mostraEstado({ endereco: { estado } }) {
 
 mostraEstado(user53);
 
+// REST = recebe todos os dados passados de forma dinâmica
+// ou seja, recebe quantos valores forem passados.
+
+const user39 = {
+    nome39: 'Faran',
+    idade: 32,
+    empresa: 'PMP'
+};
+
+const { nome39, ...resto } = user39;
+
+console.log(nome39);
+console.log(resto);
+
+function somaTudo(...params) {
+    return (
+        console.log("Resultado da soma de (", ...params,") =" ,
+            params.reduce((total, next) => total + next)
+        )    
+    )
+}
+
+somaTudo(1,1,2,3,4,5,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4)
+
+// SREAD = espalha todos os valores em outra estrutura de dados
+// ou variável
+
+const spredArr = [...arr, ...newArr];
+
+console.log(spredArr);
+
+//exemplo de spread com objeto
+
+const user129 = {
+    nome: 'Faranor',
+    idade: 4029,
+    empresa: 'Elfos Revoltosos'
+};
+
+const user130 = { ...user129, nome: 'Xaku' };
+
+console.log(user129, user130);
 
 
 
